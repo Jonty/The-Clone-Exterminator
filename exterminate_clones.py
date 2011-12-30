@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import sys
 import imaplib
 import getpass
@@ -33,7 +35,7 @@ try:
 
         typ, data = c.fetch(
             ','.join(chunk),
-            '(BODY.PEEK[HEADER.FIELDS (TO FROM SUBJECT DATE MESSAGE-ID RECEIVED REPLY-TO)])'
+            '(BODY.PEEK[HEADER.FIELDS (TO FROM SUBJECT DATE REPLY-TO)])'
         )
 
         # Occasionally we get non-message elements back
